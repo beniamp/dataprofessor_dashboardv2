@@ -1,7 +1,6 @@
 import streamlit as st
 import pandas as pd
-pip install plost
-import plost
+import matplotlib.pyplot as plt
 
 st.set_page_config(layout='wide', initial_sidebar_state='expanded')
 
@@ -40,7 +39,7 @@ stocks = pd.read_csv('https://raw.githubusercontent.com/dataprofessor/data/maste
 c1, c2 = st.columns((7,3))
 with c1:
     st.markdown('### Heatmap')
-    plost.time_hist(
+    plt.time_hist(
     data=seattle_weather,
     date='date',
     x_unit='week',
@@ -52,7 +51,7 @@ with c1:
     use_container_width=True)
 with c2:
     st.markdown('### Donut chart')
-    plost.donut_chart(
+    plt.donut_chart(
         data=stocks,
         theta=donut_theta,
         color='company',
